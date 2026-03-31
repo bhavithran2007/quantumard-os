@@ -137,7 +137,7 @@ export default function ApprovalsPage() {
     }
   }
 
-  if (loading) {
+  if (loading || !userProfile) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">

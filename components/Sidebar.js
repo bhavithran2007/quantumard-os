@@ -13,8 +13,11 @@ export default function Sidebar() {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard', icon: 'fa-home', roles: ['admin', 'manager', 'employee', 'client'] },
     { name: 'Users', path: '/admin/users', icon: 'fa-users-cog', roles: ['admin'] },
+    { name: 'Assignments', path: '/admin/assignments', icon: 'fa-user-friends', roles: ['admin'] },
+    { name: 'Clients', path: '/manager/clients', icon: 'fa-user-tie', roles: ['manager'] },
     { name: 'Projects', path: '/projects', icon: 'fa-project-diagram', roles: ['admin', 'manager', 'employee'] },
     { name: 'Tasks', path: '/tasks', icon: 'fa-tasks', roles: ['admin', 'manager', 'employee'] },
+    { name: 'Approvals', path: '/approvals', icon: 'fa-clipboard-check', roles: ['client', 'manager'] },
     { name: 'Profile', path: '/profile', icon: 'fa-user', roles: ['admin', 'manager', 'employee', 'client'] }
   ]
 

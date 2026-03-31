@@ -210,7 +210,7 @@ export default function TasksPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                 <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'var(--purple)' }}></div>
                 <h3 style={{ fontSize: '1.125rem', fontWeight: 700 }}>To Do</h3>
-                <span style={{ marginLeft: 'auto', padding: '2px 8px', borderRadius: '12px', background: 'rgba(163, 99, 170, 0.2)', color: 'var(--purple)', fontSize: '0.75rem', fontWeight: 600' }}>
+                <span style={{ marginLeft: 'auto', padding: '2px 8px', borderRadius: '12px', background: 'rgba(163, 99, 170, 0.2)', color: 'var(--purple)', fontSize: '0.75rem', fontWeight: '600' }}>
                   {tasks.todo.length}
                 </span>
               </div>
@@ -226,7 +226,7 @@ export default function TasksPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                 <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'var(--blue)' }}></div>
                 <h3 style={{ fontSize: '1.125rem', fontWeight: 700 }}>In Progress</h3>
-                <span style={{ marginLeft: 'auto', padding: '2px 8px', borderRadius: '12px', background: 'rgba(96, 165, 250, 0.2)', color: 'var(--blue)', fontSize: '0.75rem', fontWeight: 600' }}>
+                <span style={{ marginLeft: 'auto', padding: '2px 8px', borderRadius: '12px', background: 'rgba(96, 165, 250, 0.2)', color: 'var(--blue)', fontSize: '0.75rem', fontWeight: '600' }}>
                   {tasks.in_progress.length}
                 </span>
               </div>
@@ -242,7 +242,7 @@ export default function TasksPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                 <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'var(--green)' }}></div>
                 <h3 style={{ fontSize: '1.125rem', fontWeight: 700 }}>Done</h3>
-                <span style={{ marginLeft: 'auto', padding: '2px 8px', borderRadius: '12px', background: 'rgba(74, 222, 128, 0.2)', color: 'var(--green)', fontSize: '0.75rem', fontWeight: 600' }}>
+                <span style={{ marginLeft: 'auto', padding: '2px 8px', borderRadius: '12px', background: 'rgba(74, 222, 128, 0.2)', color: 'var(--green)', fontSize: '0.75rem', fontWeight: '600' }}>
                   {tasks.done.length}
                 </span>
               </div>

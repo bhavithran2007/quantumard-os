@@ -11,7 +11,12 @@ export default function Home() {
   useEffect(() => {
     if (!loading) {
       if (user && userProfile) {
-        router.push('/dashboard')
+        // Route based on role
+        if (userProfile.role === 'client' && !userProfile.onboardingComplete) {
+          router.push('/onboarding')
+        } else {
+          router.push('/dashboard')
+        }
       } else {
         router.push('/login')
       }
@@ -22,7 +27,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
         <div className="w-16 h-16 border-4 border-[var(--orange)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-        <p className="text-[var(--text2)]">Loading...</p>
+        <p className="text-[var(--text2)]">Loading Quantumard OS...</p>
       </div>
     </div>
   )

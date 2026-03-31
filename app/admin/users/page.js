@@ -134,19 +134,19 @@ export default function AdminUsersPage() {
 
   if (loading) {
     return (
-      <div className=\"min-h-screen flex items-center justify-center\">
-        <div className=\"text-center\">
-          <div className=\"w-16 h-16 border-4 border-[var(--orange)] border-t-transparent rounded-full animate-spin mx-auto mb-4\"></div>
-          <p className=\"text-[var(--text2)]\">Loading...</p>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-[var(--orange)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-[var(--text2)]">Loading...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className=\"dashboard-wrapper\" style={{ display: 'flex', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
+    <div className="dashboard-wrapper" style={{ display: 'flex', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
       <Sidebar />
-      <div className=\"main-content\" style={{ flex: 1, marginLeft: '280px' }}>
+      <div className="main-content" style={{ flex: 1, marginLeft: '280px' }}>
         <Topbar />
         <div style={{ padding: '2rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
@@ -158,7 +158,7 @@ export default function AdminUsersPage() {
               onClick={() => { setShowModal(true); setEditingUser(null); setFormData({ email: '', password: '', name: '', role: 'employee', phone: '', bio: '', company: '', industry: '' }); }}
               style={{ padding: '12px 24px', background: 'linear-gradient(135deg, var(--orange), var(--pink))', border: 'none', borderRadius: '10px', color: 'white', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}
             >
-              <i className=\"fas fa-plus\"></i> Create User
+              <i className="fas fa-plus"></i> Create User
             </button>
           </div>
 
@@ -223,13 +223,13 @@ export default function AdminUsersPage() {
                           onClick={() => handleEdit(user)}
                           style={{ padding: '8px 16px', background: 'rgba(96, 165, 250, 0.1)', border: '1px solid var(--blue)', borderRadius: '8px', color: 'var(--blue)', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer' }}
                         >
-                          <i className=\"fas fa-edit\"></i> Edit
+                          <i className="fas fa-edit"></i> Edit
                         </button>
                         <button
                           onClick={() => handleDelete(user.id)}
                           style={{ padding: '8px 16px', background: 'rgba(255, 90, 95, 0.1)', border: '1px solid var(--red)', borderRadius: '8px', color: 'var(--red)', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer' }}
                         >
-                          <i className=\"fas fa-trash\"></i>
+                          <i className="fas fa-trash"></i>
                         </button>
                       </div>
                     </td>
@@ -251,7 +251,7 @@ export default function AdminUsersPage() {
                 <div style={{ gridColumn: '1 / -1' }}>
                   <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>Name *</label>
                   <input
-                    type=\"text\"
+                    type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
@@ -262,7 +262,7 @@ export default function AdminUsersPage() {
                 <div>
                   <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>Email *</label>
                   <input
-                    type=\"email\"
+                    type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -275,7 +275,7 @@ export default function AdminUsersPage() {
                   <div>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>Password *</label>
                     <input
-                      type=\"password\"
+                      type="password"
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                       required={!editingUser}
@@ -291,17 +291,17 @@ export default function AdminUsersPage() {
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                     style={{ width: '100%', padding: '12px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)' }}
                   >
-                    <option value=\"employee\">Employee</option>
-                    <option value=\"manager\">Manager</option>
-                    <option value=\"client\">Client</option>
-                    <option value=\"admin\">Admin</option>
+                    <option value="employee">Employee</option>
+                    <option value="manager">Manager</option>
+                    <option value="client">Client</option>
+                    <option value="admin">Admin</option>
                   </select>
                 </div>
                 
                 <div>
                   <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>Phone</label>
                   <input
-                    type=\"tel\"
+                    type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     style={{ width: '100%', padding: '12px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)' }}
@@ -313,7 +313,7 @@ export default function AdminUsersPage() {
                     <div>
                       <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>Company</label>
                       <input
-                        type=\"text\"
+                        type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         style={{ width: '100%', padding: '12px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)' }}
@@ -322,7 +322,7 @@ export default function AdminUsersPage() {
                     <div>
                       <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>Industry</label>
                       <input
-                        type=\"text\"
+                        type="text"
                         value={formData.industry}
                         onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
                         style={{ width: '100%', padding: '12px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)' }}
@@ -336,7 +336,7 @@ export default function AdminUsersPage() {
                   <textarea
                     value={formData.bio}
                     onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-                    rows=\"3\"
+                    rows="3"
                     style={{ width: '100%', padding: '12px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)', resize: 'vertical' }}
                   />
                 </div>
@@ -344,14 +344,14 @@ export default function AdminUsersPage() {
               
               <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
                 <button
-                  type=\"button\"
+                  type="button"
                   onClick={() => setShowModal(false)}
                   style={{ flex: 1, padding: '12px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)', fontWeight: 600, cursor: 'pointer' }}
                 >
                   Cancel
                 </button>
                 <button
-                  type=\"submit\"
+                  type="submit"
                   style={{ flex: 1, padding: '12px', background: 'linear-gradient(135deg, var(--orange), var(--pink))', border: 'none', borderRadius: '10px', color: 'white', fontWeight: 600, cursor: 'pointer' }}
                 >
                   {editingUser ? 'Update User' : 'Create User'}

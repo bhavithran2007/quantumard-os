@@ -109,7 +109,7 @@ export default function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     style={{ width: '100%', padding: '14px 18px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid var(--border)', borderRadius: '10px', color: 'var(--text)', fontFamily: 'var(--fb)', fontSize: '1rem', transition: 'all 0.3s' }}
-                    placeholder="admin@quantumard.com"
+                    placeholder="Enter Your Email Address"
                   />
                 </div>
 
@@ -141,37 +141,7 @@ export default function LoginPage() {
                 </button>
               </form>
 
-              <div className="quick-users" style={{ background: 'rgba(96, 165, 250, 0.08)', border: '1px solid rgba(96, 165, 250, 0.2)', padding: '16px', borderRadius: '12px', marginTop: '20px' }}>
-                <h4 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <i className="fas fa-bolt"></i> Quick Demo Access
-                </h4>
-                <div className="user-buttons" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <button
-                    onClick={() => quickLogin('admin@quantumard.com', 'admin123')}
-                    className="user-btn"
-                    type="button"
-                    style={{ padding: '10px 14px', border: '1px solid rgba(96, 165, 250, 0.3)', borderRadius: '8px', background: 'rgba(96, 165, 250, 0.05)', color: 'var(--blue)', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
-                  >
-                    <i className="fas fa-user-shield"></i> Admin
-                  </button>
-                  <button
-                    onClick={() => quickLogin('manager@quantumard.com', 'manager123')}
-                    className="user-btn"
-                    type="button"
-                    style={{ padding: '10px 14px', border: '1px solid rgba(96, 165, 250, 0.3)', borderRadius: '8px', background: 'rgba(96, 165, 250, 0.05)', color: 'var(--blue)', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
-                  >
-                    <i className="fas fa-user-tie"></i> Manager
-                  </button>
-                  <button
-                    onClick={() => quickLogin('employee@quantumard.com', 'employee123')}
-                    className="user-btn"
-                    type="button"
-                    style={{ padding: '10px 14px', border: '1px solid rgba(96, 165, 250, 0.3)', borderRadius: '8px', background: 'rgba(96, 165, 250, 0.05)', color: 'var(--blue)', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
-                  >
-                    <i className="fas fa-user"></i> Employee
-                  </button>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

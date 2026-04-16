@@ -1,6 +1,6 @@
 'use client'
 
-export const dynamic = 'force-dynamic' // Add this line
+
 
 
 
@@ -49,43 +49,73 @@ export default function TasksPage() {
   }, [userProfile, projectId])
 
   const loadTasks = async () => {
-    try {
-      setDataLoading(true)
-      let tasksQuery
+  try {
+    setDataLoading(true)
+    let tasksQuery
 
-      if (projectId) {
-        tasksQuery = query(
-          collection(db, 'tasks'),
-          where('projectId', '==', projectId)
-        )
-      } else if (userProfile.role === 'admin') {
-        tasksQuery = query(collection(db, 'tasks'))
-      } else if (userProfile.role === 'manager') {
-        tasksQuery = query(
-          collection(db, 'tasks'),
-          where('assignedBy', '==', user.uid)
-        )
-      } else {
-        tasksQuery = query(
-          collection(db, 'tasks'),
-          where('assignedTo', '==', user.uid)
-        )
-      }
-
-      const snapshot = await getDocs(tasksQuery)
-      const tasksData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-      
-      setTasks({
-        todo: tasksData.filter(t => t.status === 'todo'),
-        in_progress: tasksData.filter(t => t.status === 'in_progress'),
-        done: tasksData.filter(t => t.status === 'done')
-      })
-    } catch (error) {
-      console.error('Error loading tasks:', error)
-    } finally {
-      setDataLoading(false)
+    if (projectId) {
+      tasksQuery = query(
+        collection(db, 'tasks'),
+        where('projectId', '==', projectId)
+      )
+    } else if (userProfile.role === 'admin') {
+      tasksQuery = query(collection(db, 'tasks'))
+    } else if (userProfile.role === 'manager') {
+      tasksQuery = query(
+        collection(db, 'tasks'),
+        where('assignedBy', '==', user.uid)
+      )
+    } else {
+      tasksQuery = query(
+        collection(db, 'tasks'),
+        where('assignedTo', '==', user.uid)
+      )
     }
+
+    const snapshot = await getDocs(tasksQuery)
+
+    const allTasks = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+
+    // 🔥 DEBUG (keep for now)
+    console.log("RAW TASKS:", allTasks)
+
+    // ✅ NORMALIZE STATUS (from new file)
+    const normalizeStatus = (status) => {
+      if (!status) return 'todo'
+
+      const s = status.toLowerCase().replace(/\s/g, '_')
+
+      if (s.includes('progress')) return 'in_progress'
+      if (s.includes('done') || s.includes('complete')) return 'done'
+      return 'todo'
+    }
+
+    const grouped = {
+      todo: [],
+      in_progress: [],
+      done: []
+    }
+
+    allTasks.forEach(task => {
+      const normalized = normalizeStatus(task.status)
+
+      grouped[normalized].push({
+        ...task,
+        status: normalized
+      })
+    })
+
+    setTasks(grouped)
+
+  } catch (error) {
+    console.error('Error loading tasks:', error)
+  } finally {
+    setDataLoading(false)
   }
+}
 
   const loadProjects = async () => {
     try {
